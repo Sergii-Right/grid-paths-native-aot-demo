@@ -17,10 +17,8 @@ Allowed moves:
 
 Implemented public API:
 
-- square grid:
-  - `GetSquareGridPathCount(int size)`
-- rectangular grid:
-  - `GetRectGridPathCount(int rows, int cols)`
+- `GetSquareGridPathCount(int size)`
+- `GetRectGridPathCount(int rows, int cols)`
 
 The internal algorithm uses dynamic programming.
 
@@ -60,5 +58,29 @@ In Visual Studio:
 
 The output DLL will be generated in a folder similar to:
 
-```text
-Task15Lib\bin\Release\net10.0\win-x64\
+`Task15Lib\bin\Release\net10.0\win-x64\`
+
+### Step 2. Run the C++ project
+
+After the publish step completes:
+
+1. Set `Native.Test` as the startup project
+2. Start the C++ application
+
+The C++ app loads the DLL dynamically from the configured relative path.
+
+## Notes
+
+- If the C++ app fails to load the DLL, verify the path in `main.cpp`
+- Make sure the DLL was published for `win-x64`
+- Make sure the C++ project is also running as `x64`
+
+## Why dynamic programming
+
+Dynamic programming was chosen because it is simple, readable, and easy to extend.
+
+For each cell, the number of paths is:
+
+`paths[row, col] = paths[row - 1, col] + paths[row, col - 1]`
+
+This approach can also be extended later to support blocked or dead cells.
