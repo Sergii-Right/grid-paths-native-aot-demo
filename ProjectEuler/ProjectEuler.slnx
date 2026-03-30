@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Native.Test/Native.Test.vcxproj" Id="5d655d21-cc17-4fa8-8fbf-1c1511ee9de5" />
+  <Project Path="Task15Lib/Task15Lib.csproj" />
+</Solution>

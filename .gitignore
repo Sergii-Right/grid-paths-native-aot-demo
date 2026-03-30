@@ -1,6 +1,14 @@
 # Prerequisites
 *.d
 
+#VS
+.vs/
+Debug/
+Release/
+obj/
+*.pubxml.user
+*.csproj.user
+*.vcxproj.user
 # Compiled Object files
 *.slo
 *.lo
@@ -20,7 +28,6 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Fortran module files
 *.mod
